@@ -1,0 +1,77 @@
+{
+    "name": "browserpilot/browserpilot",
+    "description": "Give your Laravel agents a browser, with a human on standby.",
+    "keywords": [
+        "laravel",
+        "browser",
+        "agents",
+        "ai",
+        "automation",
+        "cdp",
+        "browserbase",
+        "livewire"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/addtobag/browserpilot",
+    "support": {
+        "issues": "https://github.com/addtobag/browserpilot/issues",
+        "source": "https://github.com/addtobag/browserpilot"
+    },
+    "authors": [
+        {
+            "name": "Ross Ewing",
+            "role": "Developer"
+        }
+    ],
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "chrome-php/chrome": "^1.14",
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/database": "^12.0|^13.0",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+    },
+    "require-dev": {
+        "laravel/ai": "*",
+        "livewire/livewire": "^3.6|^4.0",
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^3.8|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.2|^4.0"
+    },
+    "suggest": {
+        "laravel/ai": "Required for Pilot::tools() and Pilot::handoff() agent tools.",
+        "livewire/livewire": "Required for the <livewire:pilot-live-view> component."
+    },
+    "autoload": {
+        "psr-4": {
+            "BrowserPilot\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BrowserPilot\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BrowserPilot\\PilotServiceProvider"
+            ],
+            "aliases": {
+                "Pilot": "BrowserPilot\\Facades\\Pilot"
+            }
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
